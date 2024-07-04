@@ -1,7 +1,7 @@
 package me.algo.monster.sorting;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-
+import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.commons.logging.Logger;
 import org.junit.platform.commons.logging.LoggerFactory;
@@ -20,24 +20,21 @@ class InsertionSortTest {
             return "should sort " + Constants.array1 + " to " + Constants.arraySorted;
         });
         logger.info(() -> "original array " + Constants.array1);
-        InsertionSort.sort(Constants.array1);
+        int[] arr = Arrays.copyOf(Constants.array1, Constants.array1.length);
+        InsertionSort.sort(arr);
         logger.info(() -> "sorted array " + Constants.array1);
-        assertArrayEquals(Constants.arraySorted, Constants.array1);
+        assertArrayEquals(Constants.arraySorted, arr);
     }
 
     @Test
-    void canSortEmptyArray() {
-    }
+    void canSortEmptyArray() {}
 
     @Test
-    void canSortSingleArray() {
-    }
+    void canSortSingleArray() {}
 
     @Test
-    void canSortArraySortedNaturally() {
-    }
+    void canSortArraySortedNaturally() {}
 
     @Test
-    void canSortArraySortedReversely() {
-    }
+    void canSortArraySortedReversely() {}
 }
