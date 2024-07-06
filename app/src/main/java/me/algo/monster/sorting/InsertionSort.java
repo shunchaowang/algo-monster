@@ -1,9 +1,16 @@
 package me.algo.monster.sorting;
 
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
+
 public class InsertionSort {
+    private static Logger logger =
+            LogManager.getLogManager().getLogger(InsertionSort.class.getName());
+
     public static void sort(int[] arr) {
         // return if arr is null or empty or single element
         if (arr == null || arr.length <= 1) {
+            logger.info("array is empty or only contains single element");
             return;
         }
 
